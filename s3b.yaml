@@ -858,26 +858,36 @@ text_sensor:
     id: light1_state
     entity_id: light.tv_board_lightstripe
     internal: true
+    on_value:
+      component.update: s3_box_lcd
 
   - platform: homeassistant
     id: light2_state
     entity_id: light.schrankbeleuchtung
     internal: true
+    on_value:
+      component.update: s3_box_lcd
 
   - platform: homeassistant
     id: light3_state
     entity_id: light.shellyplug_s_3ce90ed73084
     internal: true
+    on_value:
+      component.update: s3_box_lcd
 
   - platform: homeassistant
     id: light4_state
     entity_id: light.stehlampe_wohnzimmer
     internal: true
+    on_value:
+      component.update: s3_box_lcd
 
   - platform: homeassistant
     id: light5_state
     entity_id: light.sideboard
     internal: true
+    on_value:
+      component.update: s3_box_lcd
 
 i2s_audio:
   - id: i2s_audio_bus
@@ -1269,27 +1279,27 @@ voice_assistant:
               - component.update: s3_box_lcd
 
 image:
-  - file: "https://github.com/BigBobbas/ESP32-S3-Box3-Custom-ESPHome/raw/main/images/error.png"
+  - file: "https://raw.githubusercontent.com/Basquiat28/ESP32-S3-Box3-Custom-ESPHome/dev/images/error_bw.png"
     id: error_img
     resize: 320x240
     type: RGB
     transparency: alpha_channel
-  - file: "https://github.com/BigBobbas/ESP32-S3-Box3-Custom-ESPHome/raw/main/images/idle.png"
+  - file: "https://raw.githubusercontent.com/Basquiat28/ESP32-S3-Box3-Custom-ESPHome/dev/images/idle_bw.png"
     id: idle_img
     resize: 320x240
     type: RGB
     transparency: alpha_channel
-  - file: "https://github.com/BigBobbas/ESP32-S3-Box3-Custom-ESPHome/raw/main/images/listening.png"
+  - file: "https://raw.githubusercontent.com/Basquiat28/ESP32-S3-Box3-Custom-ESPHome/dev/images/listening_bw.png"
     id: listening_img
     resize: 320x240
     type: RGB
     transparency: alpha_channel
-  - file: "https://github.com/BigBobbas/ESP32-S3-Box3-Custom-ESPHome/raw/main/images/thinking.png"
+  - file: "https://raw.githubusercontent.com/Basquiat28/ESP32-S3-Box3-Custom-ESPHome/dev/images/thinking_bw.png"
     id: thinking_img
     resize: 320x240
     type: RGB
     transparency: alpha_channel
-  - file: "https://github.com/BigBobbas/ESP32-S3-Box3-Custom-ESPHome/raw/main/images/replying.png"
+  - file: "https://raw.githubusercontent.com/Basquiat28/ESP32-S3-Box3-Custom-ESPHome/dev/images/replying_bw.png"
     id: replying_img
     resize: 320x240
     type: RGB
@@ -2333,7 +2343,6 @@ binary_sensor:
             service: light.toggle
             data:
               entity_id: light.tv_board_lightstripe
-        - component.update: s3_box_lcd
 
   - platform: touchscreen
     page_id: lights_page
@@ -2352,7 +2361,6 @@ binary_sensor:
             service: light.toggle
             data:
               entity_id: light.schrankbeleuchtung
-        - component.update: s3_box_lcd
 
   - platform: touchscreen
     page_id: lights_page
@@ -2371,7 +2379,6 @@ binary_sensor:
             service: light.toggle
             data:
               entity_id: light.shellyplug_s_3ce90ed73084
-        - component.update: s3_box_lcd
 
   - platform: touchscreen
     page_id: lights_page
@@ -2390,7 +2397,6 @@ binary_sensor:
             service: light.toggle
             data:
               entity_id: light.stehlampe_wohnzimmer
-        - component.update: s3_box_lcd
 
   - platform: touchscreen
     page_id: lights_page
@@ -2409,7 +2415,6 @@ binary_sensor:
             service: light.toggle
             data:
               entity_id: light.sideboard
-        - component.update: s3_box_lcd
 
   - platform: touchscreen
     page_id: lights_page
@@ -2428,7 +2433,6 @@ binary_sensor:
             service: scene.turn_on
             data:
               entity_id: scene.kino
-        - component.update: s3_box_lcd
 
 ##### media page ####
   - platform: touchscreen
